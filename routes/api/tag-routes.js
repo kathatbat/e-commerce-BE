@@ -54,9 +54,9 @@ router.put('/:id', async (req, res) => {
         id: req.params.id,
       },
     });
-
-    if (updatedTag[0] === 0) {
-      res.status(404).json({ message: 'No tag found with that id.' });
+    console.log(updatedTag)
+    if (updatedTag [0] === 0) {
+      res.status(200).json({ message: 'No update made.' });
       return;
     }
 
@@ -75,7 +75,7 @@ router.delete('/:id', async (req, res) => {
         id: req.params.id,
       },
     });
-
+    console.log(deletedTag)
     if (deletedTag === 0) {
       res.status(404).json({ message: 'No tag found with that id.' });
       return;
